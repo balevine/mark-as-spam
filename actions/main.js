@@ -6,27 +6,25 @@ const spamLabel = 'Spam'
 
 async function run() {
   const payload = github.context.payload
-  const eventName = github.context.eventName
-  const action = payload.action
   const issue = payload.issue
   const repository = payload.repository
   const owner = repository.owner.login
   const repo = repository.name
   const issueNumber = issue.number
 
-  if (eventName == 'issue_comment' && action == 'created') {
-    let body = payload.comment.body
-    let lastCharacters = body.slice(-command.length)
-    if (lastCharacters == command) {
-      console.log(`Matched ${command} command`)
-      // Apply 'Spam' label
-      await applySpamLabel(issue, owner, repo, issueNumber)
-      // Lock issue
-      await lockIssue(owner, repo, issueNumber)
-      // Close issue
-      await closeIssue(owner, repo, issueNumber)
-    }
+  let body = payload.comment.body
+  let lastCharacters = body.slice(-command.length)
+
+  if (lastCharacters == command) {
+    console.log(`Matched ${command} command`)
+    // Apply 'Spam' label
+    await applySpamLabel(issue, owner, repo, issueNumber)
+    // Lock issue
+    await lockIssue(owner, repo, issueNumber)
+    // Close issue
+    await closeIssue(owner, repo, issueNumber)
   }
+  return true
 }
 
 async function applySpamLabel(issue, owner, repo, issueNumber) {
