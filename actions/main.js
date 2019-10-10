@@ -71,7 +71,7 @@ async function closeIssue(owner, repo, issueNumber) {
       owner: owner,
       repo: repo,
       issue_number: issueNumber,
-      state: closed
+      state: 'closed'
     })
   } catch (err) {
     return console.log(err)
