@@ -6,4 +6,4 @@ runs:
   image: 'Dockerfile'
 branding:
   icon: 'slash'
-  color: 'purple'
+  color: 'red'
