@@ -34,7 +34,7 @@ async function applySpamLabel(issue, owner, repo, issueNumber) {
   const existingLabels = issue.labels
   let labelExists = false
   for (l in existingLabels) {
-    if (labels[l].name == 'Spam') {
+    if (existingLabels[l].name == 'Spam') {
       labelExists = true
       return true
     }
