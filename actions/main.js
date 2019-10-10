@@ -46,7 +46,7 @@ async function applySpamLabel(issue, owner, repo, issueNumber) {
       owner: owner,
       repo: repo,
       issue_number: issueNumber,
-      labels: spamLabel
+      labels: [spamLabel]
     })
   } catch (err) {
     return console.log(err)
