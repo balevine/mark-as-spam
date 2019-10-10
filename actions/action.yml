@@ -1,0 +1,9 @@
+name: 'Mark As Spam'
+author: 'balevine'
+description: 'A GitHub Action to mark issues as spam.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'slash'
+  color: 'purple'

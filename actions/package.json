@@ -1,0 +1,17 @@
+{
+  "name": "checklist",
+  "version": "0.1.0",
+  "description": "Create checklists for newly opened GitHub pull requests",
+  "repository": "balevine/pull-request-checklist",
+  "keywords": [
+    "github",
+    "actions",
+    "github-actions"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+    "@actions/github": "^1.0.1",
+    "js-yaml": "^3.13.1"
+  }
+}
